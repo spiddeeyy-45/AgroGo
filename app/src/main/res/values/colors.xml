@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="blue_500">#022F2C</color>  <!-- Primary -->
+    <color name="blue_700">#012302</color>  <!-- Primary Variant -->
+    <color name="white">#FFFFFF</color><!-- On Primary -->
+    <color name="green_500">#011B01</color>
+
+</resources>
