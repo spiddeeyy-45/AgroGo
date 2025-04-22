@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "593716850170",
+    "project_id": "agogo78906",
+    "storage_bucket": "agogo78906.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:593716850170:android:e41ea71138c79ee4164843",
+        "android_client_info": {
+          "package_name": "com.example.agrogo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIZjgUP0ATTZQ1Ng-R2A3P3NyoCfrH5DE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
