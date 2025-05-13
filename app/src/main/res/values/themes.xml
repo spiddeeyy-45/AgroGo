@@ -10,5 +10,11 @@
         <item name="colorOnSecondary">@color/white</item>
         <item name="android:windowContentTransitions">true</item>
 
+
     </style>
+    <style name="navigationthem">
+        <item name="colorPrimary">@color/blue_500</item>
+        <item name="colorControlHighlight">@color/green_500</item>
+    </style>
+
 </resources>

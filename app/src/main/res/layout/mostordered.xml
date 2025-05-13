@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="10dp">
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:padding="10dp"
+        >
+        <ImageView
+            android:id="@+id/moapp"
+            android:layout_width="100dp"
+            android:layout_height="200dp"
+            android:src="@drawable/app"
+            />
+        <TextView
+            android:id="@+id/motit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apple"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/bungee"
+            android:textSize="20sp"
+            android:layout_toRightOf="@+id/moapp"/>
+        <RatingBar
+            android:id="@+id/mora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:rating="4.5"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/motit"
+            android:layout_toRightOf="@+id/moapp"
+            android:layout_marginTop="-10dp"/>
+        <TextView
+            android:id="@+id/modes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Packed with fiber and antioxidants, apples support heart and gut health"
+            android:layout_below="@id/mora"
+            android:textStyle="bold"
+            android:fontFamily="@font/antic"
+            android:layout_toRightOf="@id/moapp"/>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

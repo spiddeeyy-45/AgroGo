@@ -50,6 +50,10 @@ class newuser : AppCompatActivity() {
         pass2 =  findViewById(R.id.password1)
         go2= findViewById(R.id.creatego)
         alreadyacc=findViewById(R.id.alreadyacc)
+        gofunction()
+        alreadyaccfunction()
+    }
+    fun gofunction(){
         go2.setOnClickListener {
             val rootNode = FirebaseDatabase.getInstance()
             val reference = rootNode.reference
@@ -119,6 +123,8 @@ class newuser : AppCompatActivity() {
                 }
             }
         }
+    }
+    fun alreadyaccfunction(){
         alreadyacc.setOnClickListener(){
             val intent = Intent(this, DashBoard::class.java)
             val pairs = arrayOfNulls<Pair<View, String>>(7)
@@ -241,7 +247,4 @@ class newuser : AppCompatActivity() {
             }
         }
     }
-
-
-
 }

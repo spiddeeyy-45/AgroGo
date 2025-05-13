@@ -13,9 +13,20 @@
         android:theme="@style/Theme.AgroGo"
         tools:targetApi="31">
         <activity
+            android:name=".seedcat"
+            android:exported="false" />
+        <activity
+            android:name=".fruitcat"
+            android:exported="false" />
+        <activity
+            android:name=".vegetablecate"
+            android:exported="false" />
+        <activity
+            android:name=".searchbar"
+            android:exported="false" />
+        <activity
             android:name=".Profile1"
             android:exported="false" />
-
         <activity
             android:name=".newuser"
             android:exported="false" />

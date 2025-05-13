@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="10dp">
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:padding="10dp"
+        >
+        <ImageView
+            android:id="@+id/vegmostord"
+            android:layout_width="100dp"
+            android:layout_height="200dp"
+            android:src="@drawable/app"
+            />
+        <TextView
+            android:id="@+id/vegmostt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apple"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/bungee"
+            android:textSize="20sp"
+            android:layout_toRightOf="@+id/vegmostord"/>
+        <RatingBar
+            android:id="@+id/vegrr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:rating="4.5"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/vegmostt"
+            android:layout_toRightOf="@+id/vegmostord"
+            android:layout_marginTop="-10dp"/>
+        <TextView
+            android:id="@+id/vegmostdesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Packed with fiber and antioxidants, apples support heart and gut health"
+            android:layout_below="@id/vegrr"
+            android:textStyle="bold"
+            android:fontFamily="@font/antic"
+            android:layout_toRightOf="@id/vegmostord"/>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

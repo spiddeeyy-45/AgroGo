@@ -31,16 +31,15 @@ class MainActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
-
         setContentView(R.layout.activity_main)
          topAnim = AnimationUtils.loadAnimation(this, R.anim.main_screeb)
          bottomAnim = AnimationUtils.loadAnimation(this, R.anim.main_screen2)
          imageviewlogo=findViewById(R.id.logo)
          texlogo=findViewById(R.id.logotext)
          texslogan=findViewById(R.id.slogan)
-        imageviewlogo.setAnimation(topAnim)
-        texlogo.setAnimation(bottomAnim)
-        texslogan.setAnimation(bottomAnim)
+         imageviewlogo.setAnimation(topAnim)
+         texlogo.setAnimation(bottomAnim)
+         texslogan.setAnimation(bottomAnim)
 
         Handler(Looper.getMainLooper()).postDelayed({
             val intent = Intent(this, DashBoard::class.java)

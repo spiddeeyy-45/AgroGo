@@ -51,6 +51,13 @@ class DashBoard : AppCompatActivity() {
         pass1 = findViewById(R.id.password)
         user1 = findViewById(R.id.user_name)
         go1 = findViewById(R.id.go)
+        transitionanim()
+        go1.setOnClickListener(){
+            //When the user clicks on the go1 button, call the loginuser function, passing the clicked view as a parameter
+            loginuser(it)
+        }
+        }
+    fun transitionanim(){
         // this transition pair which will transit from one window to another by give transition name
         newuser1.setOnClickListener() {
             val intent = Intent(this, newuser::class.java) // this used jump from one page to another by giving name of page in intent
@@ -65,10 +72,8 @@ class DashBoard : AppCompatActivity() {
             val options = ActivityOptions.makeSceneTransitionAnimation(this, *pairs.requireNoNulls())
             startActivity(intent, options.toBundle())
         }
-        go1.setOnClickListener(){
-            loginuser(it)
-        }
-        }
+
+    }
     fun validateUsername(): Boolean {
         val user = user1.editText?.text.toString()
        // val nowhitespace = "\\A\\w{4,20}\\z".toRegex()
@@ -90,7 +95,6 @@ class DashBoard : AppCompatActivity() {
             }
         }
     }
-
     fun validatepass(): Boolean {
         val pss = pass1.editText?.text.toString()
 
@@ -108,7 +112,6 @@ class DashBoard : AppCompatActivity() {
         }
 
     }
-
     fun loginuser(view: View) {
         if (!validateUsername() || !validatepass()) {
             return
@@ -116,7 +119,6 @@ class DashBoard : AppCompatActivity() {
         } else {
             isuser1()
         }}
-
     fun isuser1()   {
         val userEnter = user1.editText?.text.toString().trim()
         val userpass = pass1.editText?.text.toString().trim()
@@ -179,7 +181,6 @@ class DashBoard : AppCompatActivity() {
             }
         })
     }
-
 }
 
 
