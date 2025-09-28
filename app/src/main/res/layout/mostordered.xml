@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="10dp"
+    app:cardElevation="10dp">
+    <RelativeLayout
+        android:layout_width="390dp"
+        android:layout_height="200dp"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/prod_image2"
+            android:layout_width="180dp"
+            android:layout_height="150dp"
+            android:src="@drawable/vl" />
+        <TextView
+            android:id="@+id/prod_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Apple"
+            android:fontFamily="@font/bungee"
+            android:textSize="20sp"
+            android:layout_toRightOf="@+id/prod_image2"/>
+        <TextView
+            android:id="@+id/prod_price2"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price :"
+            android:textStyle="bold"
+            android:layout_toRightOf="@id/prod_image2"
+            android:layout_below="@+id/prod_name2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-15dp" />
+        <TextView
+            android:id="@+id/prod_prices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="jjjjjjjjj"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="-15dp"
+            android:layout_below="@+id/prod_name2"
+            android:layout_toRightOf="@+id/prod_image2"/>
+
+        <TextView
+            android:id="@+id/prod_desc2"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Packed with fiber "
+            android:layout_below="@id/prod_price2"
+            android:textStyle="bold"
+            android:fontFamily="@font/antic"
+            android:layout_toRightOf="@id/prod_image2"/>
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/prod_desc2"
+            android:id="@+id/btnBuy2"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/prod_image2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="buy"/>
+        <Button
+            android:id="@+id/btnCart"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/prod_desc2"
+            android:layout_toRightOf="@+id/btnBuy2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cart"/>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

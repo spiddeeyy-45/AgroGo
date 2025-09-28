@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:background="#084942">
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/vl"
+        android:layout_alignParentRight="true"/>
+    <TextView
+        android:id="@+id/slogannav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OrganicFarming Life"
+        android:layout_margin="10dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/bungee"
+        android:textSize="24sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/antic"
+        android:textStyle="bold"
+        android:text="Organic Life Powered By AgroGoo"
+        android:textColor="@color/white"
+        android:layout_below="@id/slogannav"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="-20dp"/>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="10dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+        <RelativeLayout
+            android:id="@+id/prod_detailO"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:padding="10dp">
+            <ImageView
+                android:id="@+id/prod_imageO"
+                android:layout_width="100dp"
+                android:layout_height="200dp"
+                android:src="@drawable/vl"
+                />
+            <TextView
+                android:id="@+id/prod_nameO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apple"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/bungee"
+                android:textSize="20sp"
+                android:layout_toRightOf="@+id/prod_imageO"/>
+            <TextView
+                android:id="@+id/prod_buynameO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name of buyer"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/prod_nameO"
+                android:layout_toRightOf="@+id/prod_imageO"
+                android:layout_marginTop="-10dp"/>
+            <TextView
+                android:id="@+id/prod_descO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Packed with fiber and antioxidants, apples support heart and gut health"
+                android:layout_below="@id/prod_buynameO"
+                android:textStyle="bold"
+                android:fontFamily="@font/antic"
+                android:layout_toRightOf="@id/prod_imageO"/>
+
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/prod_priceO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price Per kg :"
+            android:layout_toRightOf="@id/prod_detailO"
+            android:fontFamily="@font/antic"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="-30dp"/>
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_below="@id/prod_priceO"
+            android:layout_marginLeft="300dp"
+            android:fontFamily="@font/antic"
+            android:textSize="10sp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/product_quantityO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity : "
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_below="@id/price"
+            android:layout_toRightOf="@id/prod_detailO"
+            android:layout_marginLeft="-30dp"/>
+        <TextView
+            android:id="@+id/quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginLeft="300dp"
+            android:layout_below="@+id/product_quantityO"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

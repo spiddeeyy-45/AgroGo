@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/slide1"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/farmingwithanalytic" />
+    <TextView
+        android:id="@+id/headingslide1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Soil to Sale — Farmer’s Profit"
+        app:layout_constraintTop_toBottomOf="@+id/slide1"
+        android:fontFamily="@font/bungee"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:layout_editor_absoluteX="100dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+    <TextView
+        android:id="@+id/slided1escription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="-10dp"
+        android:text="A new era for agriculture begins here.Our platform empowers farmers to sell their produce directly to buyers, eliminating unnecessary middlemen and ensuring that every rupee goes where it belongs — to the farmer."
+        app:layout_constraintTop_toBottomOf="@+id/headingslide1"
+        android:fontFamily="@font/antic"
+        android:textStyle="bold"
+        android:textSize="10sp"
+        android:textColor="@color/black"
+        app:layout_editor_absoluteX="100dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
