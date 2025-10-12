@@ -3,48 +3,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="CommonUI.search_fragment"
-    android:background="#E4E4E1">
-    <LinearLayout
-        android:layout_width="410dp"
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchVIewBTN"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/searchbar"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="50dp"/>
-        <ImageView
-            android:id="@+id/backBTN"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="5dp"
-            android:src="@drawable/bk"
-            android:layout_marginTop="-43dp"/>
+        tools:context="CommonUI.search_fragment"
+        android:background="#E8F5E9">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Searched Products : "
-            android:textStyle="bold"
-            android:fontFamily="@font/bungee"
-            android:layout_margin="5dp"/>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/search_prod"
-            android:layout_marginLeft="5dp"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-    </LinearLayout>
+            <!-- Search Bar with Back Button -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
 
+                <ImageView
+                    android:id="@+id/backBTN"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/bk"
+                    android:layout_marginStart="5dp"
+                    android:layout_centerVertical="true" />
 
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/searchVIewBTN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/backBTN"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/searchbar"
+                    app:queryHint="Search here..."
+                    app:iconifiedByDefault="false" />
+            </RelativeLayout>
 
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Searched Products :"
+                android:textStyle="bold"
+                android:fontFamily="@font/bungee"
+                android:textColor="@color/green_900"
+                android:textSize="18sp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp" />
 
-</FrameLayout>
+            <!-- RecyclerView (Increased height space for cards) -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/search_prod"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:clipToPadding="false"
+                android:scrollbars="vertical"
+                tools:listitem="@layout/mostordered" />
+
+        </LinearLayout>
+
+    </FrameLayout>
 </layout>

@@ -127,7 +127,7 @@ class AddItemFragment : Fragment() {
 
                         // Prepare product data
                         val product = hashMapOf(
-                            "FarmerUID" to farmerUid,
+                            "farmerUID" to farmerUid,
                             "category" to category,
                             "name" to Productname,
                             "description" to description,

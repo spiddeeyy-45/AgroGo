@@ -1,6 +1,7 @@
 package AdapterClass
 
 import HelperClass.orderhelper
+import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -24,7 +25,7 @@ object orderrepo {
                 val orderId = docRef.id
 
                 //  Save in farmer collection using FarmerUID from order
-                val farmerUid = order.FarmerUID
+                val farmerUid = order.farmerUID
                 if (!farmerUid.isNullOrEmpty()) {
                     db.collection("farmers")
                         .document(farmerUid)
@@ -33,9 +34,7 @@ object orderrepo {
                         .set(order)
                 }
                 onComplete(true, orderId)
-            }
-            .addOnFailureListener { e ->
-                onComplete(false, e.message)
-            }
+            }.addOnSuccessListener { Log.d("ORDER_DEBUG", "Order saved under farmer successfully") }
+            .addOnFailureListener { e -> Log.e("ORDER_DEBUG", "Failed to save order under farmer: ${e.message}") }
     }
 }

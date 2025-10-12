@@ -1,123 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="180dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="10dp">
-    <RelativeLayout
+    android:padding="10dp"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="8dp"
+    app:cardBackgroundColor="@color/brown_50">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="180dp">
-    <RelativeLayout
-        android:id="@+id/prod_details"
-        android:layout_width="300dp"
-        android:layout_height="150dp"
-        android:padding="10dp">
-        <ImageView
-            android:id="@+id/prod_image"
-            android:layout_width="100dp"
-            android:layout_height="200dp"
-            android:src="@drawable/vl"
-            />
-        <TextView
-            android:id="@+id/prod_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Apple"
-            android:layout_marginLeft="10dp"
-            android:fontFamily="@font/bungee"
-            android:textSize="20sp"
-            android:layout_toRightOf="@+id/prod_image"/>
-        <RatingBar
-            android:id="@+id/prod_rate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/Widget.AppCompat.RatingBar.Small"
-            android:rating="4.5"
-            android:layout_marginLeft="10dp"
-            android:layout_below="@+id/prod_name"
-            android:layout_toRightOf="@+id/prod_image"
-            android:layout_marginTop="-10dp"/>
-        <TextView
-            android:id="@+id/prod_desc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Packed with fiber and antioxidants, apples support heart and gut health"
-            android:layout_below="@id/prod_rate"
-            android:textStyle="bold"
-            android:fontFamily="@font/antic"
-            android:layout_toRightOf="@id/prod_image"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
+        <!-- Product Info Section -->
+        <RelativeLayout
+            android:id="@+id/prod_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
 
-    </RelativeLayout>
-        <TextView
-            android:id="@+id/prod_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Price Per kg :"
-            android:layout_toRightOf="@id/prod_details"
-            android:fontFamily="@font/antic"
-            android:textSize="15sp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="-30dp"/>
-        <TextView
-            android:id="@+id/price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:layout_below="@id/prod_price"
-            android:layout_marginLeft="300dp"
-            android:fontFamily="@font/antic"
-            android:textSize="10sp"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/product_quantity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Quantity : "
-            android:layout_marginTop="10dp"
-            android:textStyle="bold"
-            android:layout_below="@id/price"
-            android:layout_toRightOf="@id/prod_details"
-            android:layout_marginLeft="-30dp"/>
-        <TextView
-            android:id="@+id/quantity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:layout_marginLeft="300dp"
-            android:layout_below="@+id/product_quantity"
-            android:textSize="10sp"
-            android:textStyle="bold"
-            android:layout_marginTop="5dp"/>
-        <Button
-            android:id="@+id/update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Update"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:elevation="10dp"/>
-        <Button
-            android:id="@+id/delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Delete"
-            android:elevation="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"/>
+            <!-- Product Image -->
+            <ImageView
+                android:id="@+id/prod_image"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:src="@drawable/vl"
+                android:scaleType="centerCrop"
+                android:background="@color/white"
+                android:elevation="3dp" />
 
+            <!-- Product Name -->
+            <TextView
+                android:id="@+id/prod_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apple"
+                android:textColor="@color/brown_900"
+                android:textSize="20sp"
+                android:fontFamily="@font/bungee"
+                android:layout_toRightOf="@id/prod_image"
+                android:layout_marginStart="12dp"
+                android:layout_alignParentTop="true" />
 
-    </RelativeLayout>
+            <!-- Rating -->
+            <RatingBar
+                android:id="@+id/prod_rate"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/prod_name"
+                android:layout_toRightOf="@id/prod_image"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="2dp"
+                android:rating="4.5" />
+
+            <!-- Description -->
+            <TextView
+                android:id="@+id/prod_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/prod_rate"
+                android:layout_toRightOf="@id/prod_image"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="4dp"
+                android:text="Packed with fiber and antioxidants, apples support heart and gut health"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:fontFamily="@font/antic"
+                android:lineSpacingExtra="2dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <!-- Price and Quantity Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="125dp"
+            android:paddingHorizontal="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/prod_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Price Per kg :"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹120"
+                    android:textColor="@color/brown_900"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/product_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quantity :"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 kg"
+                    android:textColor="@color/brown_900"
+                    android:textSize="14sp"
+                     />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/update"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="Update"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/green_700"
+                android:elevation="6dp"
+                android:textStyle="bold"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/delete"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="Delete"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/brown_700"
+                android:elevation="6dp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

@@ -7,25 +7,26 @@
     android:layout_height="match_parent"
     tools:context="CommonUI.SignUpScreen"
     android:orientation="vertical"
-    android:background="@drawable/background"
+    android:background="@color/green_light"
     android:padding="20dp">
+
     <ImageView
         android:id="@+id/logo_imageu"
         android:transitionName="logoo"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/vl"
-        />
+        android:src="@drawable/vl" />
     <TextView
         android:id="@+id/logo_textu"
         android:transitionName="logot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="welcome"
-        android:textColor="@color/white"
+        android:textColor="@color/blue_700"
         android:textSize="40sp"
         android:fontFamily="@font/bungee"
         android:layout_marginTop="-40dp"/>
+
     <TextView
         android:id="@+id/slogan_textu"
         android:layout_width="wrap_content"
@@ -33,14 +34,16 @@
         android:transitionName="logot"
         android:text="SignUp to start your new Journey"
         android:textSize="18sp"
-        android:textColor="@color/white"
+        android:textColor="@color/blue_700"
         android:layout_marginTop="-25dp"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:orientation="vertical">
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/username"
             android:layout_width="match_parent"
@@ -50,13 +53,11 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:boxStrokeColor="@color/black"
             app:boxBackgroundColor="@color/white"
-            android:layout_marginTop="10dp"
-            >
+            android:layout_marginTop="10dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:textColor="@color/black"
-                />
+                android:textColor="@color/black"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -67,35 +68,33 @@
             android:transitionName="user_tran"
             app:counterEnabled="true"
             app:counterMaxLength="15"
-            app:counterTextColor="@color/white"
+            app:counterTextColor="@color/black"
             android:textColorHint="@color/black"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:boxStrokeColor="@color/black"
-            app:boxBackgroundColor="@color/white"
-            >
+            app:boxBackgroundColor="@color/white">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:textColor="@color/black"
-                />
+                android:textColor="@color/black"/>
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="xyz123@email.com"
+            android:hint="email"
             android:textColorHint="@color/black"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:boxStrokeColor="@color/black"
-            app:boxBackgroundColor="@color/white"
-            >
+            app:boxBackgroundColor="@color/white">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:textColor="@color/black"
-                android:inputType="textEmailAddress"
-                />
+                android:inputType="textEmailAddress"/>
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/phoneno"
             android:layout_width="match_parent"
@@ -104,15 +103,14 @@
             android:textColorHint="@color/black"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:boxStrokeColor="@color/black"
-            app:boxBackgroundColor="@color/white"
-            >
+            app:boxBackgroundColor="@color/white">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:textColor="@color/black"
-                android:inputType="number"
-                />
+                android:inputType="number"/>
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password1"
             android:layout_width="match_parent"
@@ -124,64 +122,65 @@
             android:textColorHint="@color/black"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:boxStrokeColor="@color/black"
-            app:boxBackgroundColor="@color/white"
-            >
+            app:boxBackgroundColor="@color/white">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:textColor="@color/black"
-                android:inputType="textPassword"
-                />
+                android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
+
         <RadioGroup
             android:id="@+id/roleselector"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:checkedButton="@id/Consumerrole">
+
             <RadioButton
+                android:id="@+id/farmerrole"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/farmerrole"
                 android:text="Farmer"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:buttonTint="@color/selectradio"
-                android:textColor="@color/white"/>
+                android:buttonTint="@color/blue_700"
+                android:textColor="@color/blue_700"/>
+
             <RadioButton
+                android:id="@+id/Consumerrole"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/Consumerrole"
                 android:text="Consumer"
                 android:textSize="15sp"
-                android:buttonTint="@color/selectradio"
-                android:textColor="@color/white"
                 android:textStyle="bold"
+                android:buttonTint="@color/blue_700"
+                android:textColor="@color/blue_700"
                 android:layout_marginLeft="20dp"/>
         </RadioGroup>
 
     </LinearLayout>
+
     <androidx.appcompat.widget.AppCompatButton
-        android:transitionName="go_tran"
-        android:layout_marginTop="10dp"
         android:id="@+id/creatego"
+        android:transitionName="go_tran"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="Go"
         android:textStyle="bold"
-        android:background="@color/white">
-    </androidx.appcompat.widget.AppCompatButton>
+        android:background="@color/blue_700"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"/>
+
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_marginTop="10dp"
         android:id="@+id/alreadyacc"
         android:transitionName="newu_tran"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Already have an account ? Login "
-        android:textColor="@color/white"
+        android:text="Already have an account ? Login"
+        android:textColor="@color/blue_700"
         android:textStyle="bold"
-        android:background="#00000000">
-    </androidx.appcompat.widget.AppCompatButton>
-
+        android:background="@android:color/transparent"
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>

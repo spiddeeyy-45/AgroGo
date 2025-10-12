@@ -1,61 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="200dp"
-    android:layout_height="200dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="10dp"
-    android:layout_margin="2dp">
+    android:layout_width="210dp"
+    android:layout_height="250dp"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="8dp"
+    app:cardBackgroundColor="@color/green_light">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="10dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Product Image -->
         <ImageView
-            android:layout_marginTop="-10dp"
             android:id="@+id/image_prod"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:padding="6dp"
+            android:elevation="3dp"
             android:src="@drawable/vl"
-            android:layout_gravity="center"/>
+            android:scaleType="centerCrop" />
+
+        <!-- Product Name -->
         <TextView
             android:id="@+id/name_prod"
-            android:layout_marginTop="-20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="Carrot"
-            android:layout_gravity="center"/>
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center" />
+
+        <!-- Product Description -->
         <TextView
             android:id="@+id/des_prod"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/antic"
+            android:layout_marginTop="2dp"
+            android:text="Carrots boost eyesight"
             android:textColor="@color/black"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:layout_gravity="center"
-            android:text="Carrots boost eyesight"/>
+            android:textSize="13sp"
+            android:fontFamily="@font/antic"
+            android:gravity="center" />
+
+        <!-- Product Price -->
         <TextView
             android:id="@+id/price_prod"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="₹25/kg"
+            android:textColor="@color/black"
             android:textStyle="bold"
-            android:layout_gravity="center"
-            android:text="Price"/>
-        <Button
-            android:id="@+id/btnbuy"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_marginTop="10dp"
-            android:text="buy"/>
-        <Button
-            android:id="@+id/btnaddtocart"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:text="cart"
-            android:layout_marginTop="-48dp"
-            android:layout_marginLeft="100dp"/>
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="15sp"
+            android:gravity="center" />
+
+        <!-- Button Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/btnbuy"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="Buy"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/green_700"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_semibold"
+                android:layout_marginEnd="6dp" />
+
+            <Button
+                android:id="@+id/btnaddtocart"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="Cart"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/brown_900"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_semibold" />
+        </LinearLayout>
 
     </LinearLayout>
 

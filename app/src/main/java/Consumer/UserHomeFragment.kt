@@ -1,6 +1,7 @@
 package Consumer
 
 import AdapterClass.PaymentViewModel
+import AdapterClass.RecentlyAdapter
 import AdapterClass.adapterre
 import AdapterClass.hoardingSlide
 import AdapterClass.mostordedre
@@ -10,6 +11,7 @@ import CommonUI.search_fragment
 import CommonUI.vegetable_fragment
 import HelperClass.ReHelper
 import HelperClass.hoardingHelper
+import HelperClass.recentlyorder
 import HelperClass.remHelper
 import android.os.Bundle
 import android.os.Handler
@@ -26,6 +28,7 @@ import com.example.agrogo.R
 import com.example.agrogo.databinding.FragmentUserHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.toObject
 import com.razorpay.Checkout
 import org.json.JSONObject
 
@@ -33,6 +36,7 @@ class UserHomeFragment : Fragment()  {
     private lateinit var binding: FragmentUserHomeBinding
     private lateinit var featuredadapter: adapterre
     private lateinit var mostorderAdapter:mostordedre
+    private lateinit var recentlyAdapter: RecentlyAdapter
     private lateinit var helper: List<hoardingHelper>
     private lateinit var handler: Handler
     private lateinit var runnable: Runnable
@@ -71,6 +75,16 @@ class UserHomeFragment : Fragment()  {
         }
         handler.postDelayed(runnable, 4000)
         sliderecyeler()
+        // payment Sucess notify
+        paymentViewModel.paymentResult.observe(viewLifecycleOwner) { event ->
+            event.getContentIfNotHandled()?.let { (success, message) ->
+                if (success) {
+                    Toast.makeText(requireContext(), "Payment Successful: $message", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(requireContext(), "Payment Failed: $message", Toast.LENGTH_LONG).show()
+                }
+            }
+        }
 
         // 🔹 Initialize adapter with button actions
         val productList = mutableListOf<ReHelper>()
@@ -96,16 +110,8 @@ class UserHomeFragment : Fragment()  {
                 featuredadapter.notifyDataSetChanged()
             }
         mostorderedRecycler()
-        // payment Sucess notify
-        paymentViewModel.paymentResult.observe(viewLifecycleOwner) { event ->
-            event.getContentIfNotHandled()?.let { (success, message) ->
-                if (success) {
-                    Toast.makeText(requireContext(), "Payment Successful: $message", Toast.LENGTH_LONG).show()
-                } else {
-                    Toast.makeText(requireContext(), "Payment Failed: $message", Toast.LENGTH_LONG).show()
-                }
-            }
-        }
+        recentlyorderedRecycler()
+
         //button for fruits and vegtable and grains
         binding.fruitIcon.setOnClickListener {
             val newfragment = fruits_fragment()
@@ -260,7 +266,7 @@ class UserHomeFragment : Fragment()  {
         binding.offerHoarding.adapter = adapter
     }
     private fun mostorderedRecycler(){
-        // 🔹 Initialize adapter with button actions
+
         val productList2 = mutableListOf<remHelper>()
         mostorderAdapter = mostordedre(
             productList2,
@@ -282,6 +288,73 @@ class UserHomeFragment : Fragment()  {
                     productList2.add(product2)
                 }
                 mostorderAdapter.notifyDataSetChanged()
+            }
+    }
+    private fun recentlyorderedRecycler(){
+        val productList = mutableListOf<recentlyorder>()
+        recentlyAdapter = RecentlyAdapter(
+            productList,
+            onAddToCart3 = { product -> addToCart3(product)},
+            onBuyNow3 = {product -> paymentViewModel.setSelectedProduct(product)
+                buyNow3(product)}
+        )
+        binding.recentrecy.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
+        binding.recentrecy.adapter=recentlyAdapter
+        firestore.collectionGroup("products")
+            .get()
+            .addOnSuccessListener { result ->
+                for (doc in result){
+                    val productl = doc.toObject(recentlyorder::class.java)
+                    productl.id = doc.id
+                    productList.add(productl)
+                }
+                recentlyAdapter.notifyDataSetChanged()
+            }
+    }
+    private fun buyNow3(product: recentlyorder) {
+        try {
+            val checkout = Checkout()
+            checkout.setKeyID(secret_key)
+            // create order details
+            val options = JSONObject()
+            options.put("name", "AgroGo") // business/app name
+            options.put("description", product.name)
+            options.put("currency", "INR")
+
+            // Razorpay expects price in PAISE (multiply by 100)
+            val price = product.price ?: 0.0
+            val quantity = product.quantity ?: 1
+            val amount = price*quantity.toDouble()*100
+            options.put("amount", amount)
+
+            val prefill = JSONObject()
+            prefill.put("email", email?:"")  // can get from Firebase user
+            prefill.put("contact", phoneno?:"")
+
+            options.put("prefill", prefill)
+
+            // open razorpay checkout
+            checkout.open(requireActivity(), options)
+
+        } catch (e: Exception) {
+            Toast.makeText(requireContext(), "Error: " + e.message, Toast.LENGTH_LONG).show()
+        }
+
+    }
+    private fun addToCart3(product: recentlyorder) {
+        if (userId == null) {
+            Toast.makeText(requireContext(), "Please login first", Toast.LENGTH_SHORT).show()
+            return
+        }
+        firestore.collection("consumers")
+            .document(userId)
+            .collection("cart")
+            .add(product)
+            .addOnSuccessListener {
+                Toast.makeText(requireContext(), "${product.name} added to cart", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener {
+                Toast.makeText(requireContext(), "Failed to add to cart", Toast.LENGTH_SHORT).show()
             }
     }
 

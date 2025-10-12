@@ -1,7 +1,7 @@
 package HelperClass
 
 data class carthelper(
-    val FarmerUID : String?=null,
+    val farmerUID : String?=null,
     var id :String ?=null,
     val category: String = "",
     val name: String = "",

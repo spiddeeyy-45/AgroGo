@@ -1,6 +1,6 @@
 package HelperClass
 
-class remHelper(
+data class recentlyorder(
     val farmerUID : String?=null,
     var id :String ?=null,
     val category: String = "",

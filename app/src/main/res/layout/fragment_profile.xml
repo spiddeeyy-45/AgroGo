@@ -1,20 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="Farmer.ProfileFragment"
-    android:background="#E4E4E1">
-    <ImageView
-        android:id="@+id/logoutbtn"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/log"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="Farmer.ProfileFragment"
+        android:background="@color/green_light">
 
+        <!-- Logout Button -->
+        <ImageView
+            android:id="@+id/logoutbtn"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/log"
+            android:layout_gravity="top|end"
+            android:contentDescription="Logout Button"
+            android:padding="6dp"
+            android:background="@color/white"
+            android:elevation="4dp" />
 
+        <!-- Farmer Details Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="12dp"
+            app:cardBackgroundColor="@color/white"
+            android:padding="24dp">
 
-</FrameLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <!-- Profile Image -->
+                <ImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/prof"
+                    android:scaleType="centerCrop"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="Farmer Profile"
+                    android:background="@drawable/circle_background"
+                    android:elevation="4dp"
+                    android:padding="4dp" />
+
+                <!-- Farmer Name -->
+                <TextView
+                    android:id="@+id/farmer_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Farmer Name"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brown_900"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/bungee"
+                    android:gravity="center" />
+
+                <!-- Farmer Phone -->
+                <TextView
+                    android:id="@+id/farmer_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone: +91 1234567890"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/antic"
+                    android:gravity="center" />
+
+                <!-- Farmer Email -->
+                <TextView
+                    android:id="@+id/farmer_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email: farmer@example.com"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/antic"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
 </layout>

@@ -1,10 +1,10 @@
 package HelperClass
 
 data class orderhelper(
-    val id : String? =null,
+    var id : String? =null,
     val imageUrl: String = "",
     val buyerUid: String = "",
-    val FarmerUID : String?=null,
+    val farmerUID : String?=null,
     val productId: String = "",
     val productName: String = "",
     val qty: Long = 0,

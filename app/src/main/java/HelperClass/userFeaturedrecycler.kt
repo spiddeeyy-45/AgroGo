@@ -1,9 +1,6 @@
 package HelperClass
-
-import com.google.firebase.firestore.ServerTimestamp
-
 data class ReHelper(
-    val FarmerUID : String?=null,
+    val farmerUID : String?=null,
     var id :String ?=null,
     val category: String = "",
     val name: String = "",

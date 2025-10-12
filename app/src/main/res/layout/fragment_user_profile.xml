@@ -1,17 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-<FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="Consumer.UserProfileFragment">
-    <ImageView
-        android:id="@+id/logoutBTN"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/log"/>
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/green_light"
+        tools:context="Consumer.UserProfileFragment">
 
-</FrameLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:paddingBottom="16dp">
+
+                <!--  Profile Header Card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="8dp"
+                    android:background="@android:color/white"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+
+                        <!-- Profile Picture -->
+                        <ImageView
+                            android:id="@+id/userProfileImage"
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:src="@drawable/prof"
+                            android:layout_marginBottom="12dp"
+                            android:scaleType="centerCrop"
+                            android:background="@drawable/circle_background"
+                            android:padding="4dp" />
+
+                        <!-- User Name -->
+                        <TextView
+                            android:id="@+id/userName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="User Name"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/green_800"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:layout_marginBottom="4dp" />
+
+                        <!-- User Email -->
+                        <TextView
+                            android:id="@+id/userEmail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="user@example.com"
+                            android:textSize="15sp"
+                            android:textColor="@color/gray_dark"
+                            android:layout_marginBottom="2dp" />
+
+                        <!-- User Phone -->
+                        <TextView
+                            android:id="@+id/userPhone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+91 9876543210"
+                            android:textSize="15sp"
+                            android:textColor="@color/gray_dark"
+                            android:layout_marginBottom="12dp" />
+
+                        <!-- Logout Button -->
+                        <Button
+                            android:id="@+id/logoutBTN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Logout"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:backgroundTint="@color/red_600"
+                            android:paddingHorizontal="28dp"
+                            android:paddingVertical="10dp"
+                            android:elevation="6dp"
+                            android:layout_marginTop="4dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Your Orders"
+                    android:textColor="@color/green_800"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/ordersRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    tools:listitem="@layout/order_layout"
+                    android:layout_marginBottom="8dp"
+                    android:padding="4dp"/>
+
+                <LinearLayout
+                    android:id="@+id/emptyOrdersLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:padding="20dp">
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/emptyOrdersAnim"
+                        android:layout_width="220dp"
+                        android:layout_height="220dp"
+                        app:lottie_rawRes="@raw/emptycart"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No Orders Yet!"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/green_800"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
 </layout>

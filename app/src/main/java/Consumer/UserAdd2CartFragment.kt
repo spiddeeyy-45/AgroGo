@@ -86,6 +86,7 @@ class UserAdd2CartFragment : Fragment() {
                             productList.remove(product)
                                 cartAdapter.notifyDataSetChanged()
                             Toast.makeText(requireContext(),"Product Removed From Cart",Toast.LENGTH_SHORT).show()
+                            updateEmptyCartState()
                         }
                 }
             }
@@ -108,6 +109,7 @@ class UserAdd2CartFragment : Fragment() {
                 }
                 cartAdapter.notifyDataSetChanged()
                 Binding.totalPrice.text="$TotalPrice"
+                updateEmptyCartState()
             }
             .addOnFailureListener {
                 Toast.makeText(requireContext(),"Failed To Fetching Your Cart Item ",Toast.LENGTH_SHORT).show()
@@ -191,12 +193,28 @@ class UserAdd2CartFragment : Fragment() {
                         cartAdapter.notifyDataSetChanged()
                         TotalPrice = 0.0
                         Binding.totalPrice.text="0.0"
+                        updateEmptyCartState()
                     }
                     .addOnFailureListener {
                         Toast.makeText(requireContext(), "Failed to clear cart", Toast.LENGTH_SHORT).show()
                     }
             }
     }
+    private fun updateEmptyCartState() {
+        if (productList.isEmpty()) {
+            Binding.emptyCartLayout.visibility = View.VISIBLE
+            Binding.cartRecycler.visibility = View.GONE
+            Binding.buyallBtn.isEnabled = false
+            Binding.buyallBtn.alpha = 0.5f
+            Binding.totalPrice.text = "₹0.0"
+        } else {
+            Binding.emptyCartLayout.visibility = View.GONE
+            Binding.cartRecycler.visibility = View.VISIBLE
+            Binding.buyallBtn.isEnabled = true
+            Binding.buyallBtn.alpha = 1f
+        }
+    }
+
 
 
 }

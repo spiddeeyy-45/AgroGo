@@ -5,6 +5,38 @@
     <color name="blue_700">#012302</color>  <!-- Primary Variant -->
     <color name="white">#FFFFFF</color><!-- On Primary -->
     <color name="green_500">#011B01</color>
+    <color name="brown_50">#EFEBE9</color>
+    <color name="brown_100">#D7CCC8</color>
+    <color name="brown_300">#A1887F</color>
+    <color name="brown_500">#795548</color>
+    <color name="brown_700">#5D4037</color>
+    <color name="brown_900">#4E342E</color>
+    <!-- App Brand Colors -->
+    <color name="green_600">#2E7D32</color>       <!-- Used for Buy button -->
+    <color name="red_400">#E53935</color><!-- Used for Remove button -->
+    <color name="red_600">#E53935</color>
+    <color name="blue_7100">#1976D2</color>        <!-- Used for product name, tags -->
+    <!-- Used for price text -->
+    <!-- Primary Greens for Agriculture Theme -->
+    <color name="green_900">#1B5E20</color> <!-- Dark Green for headings/text -->
+    <color name="green_800">#2E7D32</color> <!-- Slightly lighter green for accents/subtitles -->
+    <color name="green_700">#388E3C</color> <!-- Optional: mid green -->
+    <color name="green_5100">#4CAF50</color> <!-- Soft green for background or cards -->
+    <color name="green_light">#E8F5E9</color>
+
+    <!-- Backgrounds and Card -->
+    <color name="card_background">#FFFFFFFF</color>
+    <color name="divider_gray">#E0E0E0</color>
+    <color name="ripple_light">#1F000000</color>
+
+    <!-- Common White/Gray Shades -->
+    <color name="gray_light">#F5F5F5</color>
+    <color name="gray_dark">#424242</color>
+
+    <!-- Optional Theme Variants -->
+    <color name="primary">#388E3C</color>          <!-- Primary AgroGo Green -->
+    <color name="primary_dark">#1B5E20</color>
+    <color name="accent">#4CAF50</color>
 
 </resources>
 

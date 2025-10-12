@@ -29,11 +29,12 @@
             android:fontFamily="@font/bungee"/>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/LivestockHandler"
-            android:layout_width="380dp"
+            android:layout_width="400dp"
             android:layout_height="match_parent"
             android:layout_below="@+id/livestocktag"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"/>
+            tools:listitem="@layout/farmer_product"
+            android:layout_marginLeft="5dp"/>
 
     </RelativeLayout>
         <LinearLayout
@@ -52,9 +53,9 @@
                 android:text="Welcome !"
                 android:textStyle="bold"
                 android:fontFamily="@font/antic"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="20dp"/>
             <TextView
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
@@ -65,17 +66,6 @@
                 android:layout_marginLeft="10dp"
                 android:fontFamily="@font/bungee"
                 android:textColor="#F4F4F3"/>
-            <TextView
-                android:id="@+id/address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Address"
-                android:textSize="15sp"
-                android:textColor="#F4F4F3"
-                android:fontFamily="@font/antic"
-                android:textStyle="bold"
-                android:layout_marginTop="-16dp"
-                android:layout_marginLeft="10dp" />
         </LinearLayout>
         <ImageView
             android:layout_width="400dp"

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="6dp"
+    android:layout_marginHorizontal="4dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:gravity="center_vertical">
+
+        <!-- 🖼 Product Image -->
+        <ImageView
+            android:id="@+id/orderProductImage"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/order_circle"
+            tools:src="@drawable/vl" />
+
+        <!-- 📋 Order Details -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp">
+
+            <!-- Product Name -->
+            <TextView
+                android:id="@+id/orderProductName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Organic Tomatoes"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/blue_700"
+                android:maxLines="2"
+                android:ellipsize="end" />
+
+            <!-- Quantity & Total -->
+            <TextView
+                android:id="@+id/orderQtyPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Qty: 5 kg | ₹250"
+                android:textSize="14sp"
+                android:textColor="@color/gray_dark"
+                android:layout_marginTop="4dp" />
+
+            <!-- Order Date -->
+            <TextView
+                android:id="@+id/orderDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ordered on: 03 Oct 2025"
+                android:textSize="12sp"
+                android:textColor="@color/gray_dark"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
